@@ -5,3 +5,10 @@ data_ingestion:
   source_URL: https://drive.google.com/file/d/1c6ByHwx7b1cf47C8lAMcpBtnY3ke5-Lk/view?usp=sharing
   local_data_file: artifacts/data_ingestion/Dataset.csv
   unzip_dir: artifacts/data_ingestion
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion/Dataset.csv
+  embedding_model: microsoft/unixcoder-base
+  model_url: https://raw.githubusercontent.com/microsoft/CodeBERT/master/UniXcoder/unixcoder.py
+  model_download_path: artifacts/data_transformation

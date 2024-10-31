@@ -9,6 +9,7 @@ from ensure import ensure_annotations
 from box import ConfigBox
 from typing import Any
 import base64
+import wget
 
 
 @ensure_annotations
@@ -100,3 +101,15 @@ def get_size(path: Path) -> str:
     size = round(os.path.getsize(path)/1024)
     return f"~{size} KB"
 
+def download_file(url: str, outpath: str):
+    """
+    Download file from the url
+    Args:
+        url (str): URL of the file
+    """
+    try:
+        filename = wget.download(url,out=Path(outpath))
+        print(f"\nDownloaded: {filename}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    logger.info(f"File downloaded from {url} and saved")
