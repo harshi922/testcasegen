@@ -7,7 +7,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s] : %(message)s:')
 
 # create a new project folder
-project_name = "cnnImageClassification"
+project_name = "llmRAGtestcasegen"
 
 list_of_files = [
     ".github/workflows/.gitkeep",
